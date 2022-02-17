@@ -1,0 +1,37 @@
+{% extends 'meetups/base/base.html'%}
+{% block title %} {{meetup_title}} {% endblock %}
+
+{% block body %}
+
+
+
+
+<article>
+    <section >
+        <address>
+            {{meetup_slug}}
+        </address>
+    </section>
+    <br>
+    <section>
+        <h2>
+            meetup about <br>
+            {{meetup_description}}
+        </h2>
+        <form method="POST" action="{% url 'meetup-detail' meetup_slug %}">
+            {% csrf_token %}
+            <u>
+                {{ form.as_ul }}
+            </u>
+            <div id="registration-actions">
+                <button>
+                    Register
+                </button>
+
+            </div>
+        </form>
+
+    </section>
+</article>
+
+{%endblock %}

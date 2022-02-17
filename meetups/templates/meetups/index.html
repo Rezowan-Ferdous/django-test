@@ -1,0 +1,28 @@
+{% extends 'meetups/base/base.html'%}
+
+{% load static %}
+   {% block title %}All Meetups  {% endblock %}
+
+ {% block main_heading %}
+ we got great meetup comming up
+ {% endblock %} 
+        {% block header_content %}
+        <p>find the one that best suits you </p>
+        {% endblock %}
+
+
+        {% block body %}
+
+        <section>   
+            <h2>Upcomming Meetups </h2>
+        
+            <h2>{{meetups.0.title}}</h2>
+              
+            {% for meetup_item in meetups %}
+            {% include 'meetups/includes/meetup-item.html' with title=meetup_item.title description=meetup_item.description slug=meetup_item.slug location=meetup_item.location.name address=meetup_item.location.address image=meetup_item.image.url %}
+            {% endfor %}
+        
+        </section>
+
+        {% endblock %}
+ 

@@ -1,0 +1,23 @@
+
+  <ol>  
+    <li> {{title}} </li>
+    
+   
+    <div>
+        <address>
+            {{location}}
+            {{address}}
+        </address>
+    </div>
+    <div>
+        {{ description }}
+    </div>
+    <div>
+        <img src="{{ image }}" alt="{{ title }}">
+    </div>
+    <div>
+        <!-- <a href="/meetups/{{slug}}">more details </a> -->
+        <a href="{% url 'meetup-detail' slug %}">more  </a>
+    </div>
+</ol>
+
